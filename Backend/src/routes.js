@@ -1,6 +1,6 @@
 const express = require('express');
-const {celebrate, Segments, Joi} =  require('celebrate');
-const routes  = express.Router();
+const { celebrate, Segments, Joi } = require('celebrate');
+const routes = express.Router();
 
 const OngController = require('./controllers/OngController');
 const OngValidator = require('./validators/OngValidator');
@@ -14,7 +14,7 @@ const ProfileValidator = require('./validators/ProfileValidator');
 const SessionController = require('./controllers/SessionController');
 const SessionValidator = require('./validators/SessionValidator');
 
-routes.get('/',(request,response)=> {
+routes.get('/', (request, response) => {
     return response.json({
         evento: 'Semana OminiStack',
         aluno: 'Alex Fraga'

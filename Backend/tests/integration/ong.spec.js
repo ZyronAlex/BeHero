@@ -11,19 +11,19 @@ describe('ong', () => {
     afterAll(async () => {
         await connection.destroy();
     });
-    
-    it('should be able to create a new ONG', async () =>{
+
+    it('should be able to create a new ONG', async () => {
         const response = await request(app)
             .post('/ong')
             .send({
                 name: "asdfas",
                 email: "asdf@asdas.com",
                 whatsapp: "992037820",
-                city:"sjrp",
+                city: "sjrp",
                 uf: "sp"
             });
-         
+
         expect(response.body).toHaveProperty('id');
-        expect(response.body.id).toHaveLength(8);  
+        expect(response.body.id).toHaveLength(8);
     });
 });

@@ -1,26 +1,26 @@
-const {celebrate, Segments, Joi} =  require('celebrate');
-module.exports = {    
+const { celebrate, Segments, Joi } = require('celebrate');
+module.exports = {
     get() {
         return celebrate({
-            [Segments.QUERY] : Joi.object().keys({
+            [Segments.QUERY]: Joi.object().keys({
                 page: Joi.number(),
             })
         })
     },
 
-    post(){
+    post() {
         return celebrate({
-            [Segments.HEADERS]: Joi.object({        
+            [Segments.HEADERS]: Joi.object({
                 authorization: Joi.string().required()
             }).unknown(),
             [Segments.BODY]: Joi.object().keys({
                 title: Joi.string().required(),
                 description: Joi.string().required(),
                 value: Joi.number().required()
-              })
+            })
         })
     },
-    delete(){
+    delete() {
         return celebrate({
             [Segments.PARAMS]: Joi.object().keys({
                 id: Joi.number().required(),

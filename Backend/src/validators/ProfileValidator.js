@@ -1,8 +1,8 @@
-const {celebrate, Segments, Joi} =  require('celebrate');
-module.exports = {    
+const { celebrate, Segments, Joi } = require('celebrate');
+module.exports = {
     get() {
         return celebrate({
-            [Segments.HEADERS]: Joi.object({        
+            [Segments.HEADERS]: Joi.object({
                 authorization: Joi.number().required()
             }).unknown()
         })
