@@ -23,11 +23,11 @@ export default function Incidents() {
     if (loading) {
       return;
     }
-
-    if (total > 0 && incidents.length === total) {
+    
+    if (total > 0 && incidents.length == total) {
       return;
     }
-
+    
     setLoading(true);
 
     const response = await api.get("incident", {
